@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VUE.js V2</title>
+</head>
+<body>
+	<div id="main">
+		<ul>
+			<li v-for="item in people">{{item}}</li>
+			<!--alternativa <li v-for="item in people" v-text="item"></li> -->
+			
+		</ul>
+		<input type="text" v-model="name" v-on:keyup.enter="addName"> <!-- *3 -->
+		
+	</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+	<script type="text/javascript">
+	/* *1 */
+	new Vue({
+		el: '#main',
+		data: {
+			people:['sandra','patricia','alejandra','javier']
+		},
+		name:'',
+		//*2
+		methods:{
+			addName: function(){
+				this.people.push(this.name);
+				this.name='';//*4
+			}
+		}
+	});
+	</script>
+
+</body>
+</html>
