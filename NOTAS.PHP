@@ -102,5 +102,9 @@ ____Traer información desde la base de datos para llenar la lista de usuarios__
 
 /*=====  End of LARAVEL-VUE  ======*/
 
-
+______________v-show____________________________
+directiva: lo que utilizamos lo que utilizamos para que una etiquetao elemento haga algo.
+//-El objetivo de este app es hacer que el boton de envio desaparesca a no ser que halla texto en la caja de texto.
+v-show muestra condicionalmente algo
+*1 si el v-model recibe informacion se activa una especie de valor true en el v.show que lo esta invocando
 
