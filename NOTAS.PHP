@@ -130,3 +130,14 @@ ____________filtro.html____________--
 *6 this.lists trae el lists actual con el siguiente filtrado
 filter((item)) item se refiere a los mismos item que estan contenidos en lists[] vamos a coger cada uno de estos item y seleccionamos su propiedad name la cual debe estar disponible en el json que traemos del servidor, con item.name.includes preguntamos si la propiedad name de nuestro objeto vue (this.name) esta incluido en el item.name de lists[] y nos devuelve u array  que coincide 
 
+______________Component.html_________________-
+*1 el primer argumento es el nombre del componente que sirve como etiqueta html,
+el segundo parametro es un objeto
+*2 creamos la propiedad variable para remplazar las palabras cambiantes como "posts" 
+ se debe usar una palabra que sea capaz de definir el concepto comun. en este caso lists
+*4 ejecución de la llave created la cual ejecuta 2 metodos,
+*5 getPosts se conecta por medio de axios a la api en la url y llena el arreglo en data posts[] *6
+
+*7 Con common-list llamamos a el componente en la *1
+*8 la palabra lists en el v-for es remplazada por v-bind:lists='albums' *7
+*9 v-bind:lists='posts' con posts le decimos que traiga el contenido del arreglo posts[] y lo pase al props del componente
