@@ -108,3 +108,25 @@ directiva: lo que utilizamos lo que utilizamos para que una etiquetao elemento h
 v-show muestra condicionalmente algo
 *1 si el v-model recibe informacion se activa una especie de valor true en el v.show que lo esta invocando
 
+______________v-if V-ELSE Y TEMPLATE________________
+*1 v-if="!message"> si resulta ser que  el v-model message es a vacio entonces poner texto de x manera
+*2 el uso de template se da cuando queremos evitar poner muchas directivas repetitivas y de dificil mantenimiento
+//se hace uso del v-show cuando no hay necesidad de usar un v-else, v-show por otra parte es mas pesado que v-if
+
+____________eventos.html y eventos2.html_____________________-
+//un evento se refiere a cualquier interacción que ejecute el usuario con el sistema (un click, una tecla, un movimiento del mouse, el uso de algun otro dispositivo de entrada)
+*1 directiva v-on:click="addName" detecta el evento click y ejecuta el metodo addName
+*2 this hace referencia al objeto Vue donde esta insertado
+*3 la directiva es v-on el primer parametro es el evento keyup y el segundo parametro es la tecla enter
+*4 unshift agrega el elemento al principio de la lista
+
+____________filtro.html____________--
+*1 listar propiedad name de item -> item proviene de lists
+*2 invoca la funcion getUsers  al hacer click en el boton listar lo cual ocaciona que la lista se alimente de contenido y por la tanto se active el v-for *5, si la lista deja de estar vacia desaparece el boton debido a que su renderizacion depende del v-if
+*3 la funcion getUsers por el metodo get de axios trae la respuesta del url y luego adiciona a lists[] *4 el parametro data devuelto por el url en formato json
+*4 Esta relacionada con el la variable name
+-----Algoritmo para buscar------
+*5 el metodo computado sirve para incluir lógica mas avanzada
+*6 this.lists trae el lists actual con el siguiente filtrado
+filter((item)) item se refiere a los mismos item que estan contenidos en lists[] vamos a coger cada uno de estos item y seleccionamos su propiedad name la cual debe estar disponible en el json que traemos del servidor, con item.name.includes preguntamos si la propiedad name de nuestro objeto vue (this.name) esta incluido en el item.name de lists[] y nos devuelve u array  que coincide 
+
